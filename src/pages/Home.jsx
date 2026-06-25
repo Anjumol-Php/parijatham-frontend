@@ -5,6 +5,7 @@ import FeaturedProducts from "../components/FeaturedProducts/FeaturedProducts";
 import Footer from "../components/Footer/Footer";
 import Categories from "../components/Categories/Categories";
 import WhyChoose from "../components/WhyChoose/WhyChoose";
+import Testimonials from "../components/Testimonials/Testimonials";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
 <FeaturedProducts />
 
 <Categories />
+<Testimonials />
 
 <Footer />
     </>
