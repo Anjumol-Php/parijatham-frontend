@@ -1,0 +1,45 @@
+.instagram-gallery {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.instagram-gallery .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.instagram-gallery .section-header h2 {
+  font-size: 52px;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.instagram-gallery .section-header p {
+  color: #777;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.insta-card {
+  overflow: hidden;
+  border-radius: 18px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: .4s;
+}
+
+.insta-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: .5s;
+}
+
+.insta-card:hover img {
+  transform: scale(1.08);
+}
+
+.insta-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}

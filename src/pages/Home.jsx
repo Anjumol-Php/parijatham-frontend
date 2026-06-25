@@ -6,6 +6,8 @@ import Footer from "../components/Footer/Footer";
 import Categories from "../components/Categories/Categories";
 import WhyChoose from "../components/WhyChoose/WhyChoose";
 import Testimonials from "../components/Testimonials/Testimonials";
+import InstagramGallery from "../components/InstagramGallery/InstagramGallery";
+import Footer from "../components/Footer/Footer";
 
 function Home() {
   return (
@@ -22,7 +24,7 @@ function Home() {
 
 <Categories />
 <Testimonials />
-
+<InstagramGallery />
 <Footer />
     </>
   );
