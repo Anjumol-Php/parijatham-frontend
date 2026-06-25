@@ -1,8 +1,4 @@
-function Footer() {
-  return <div>Footer</div>;
-}
 
-export default Footer;import "./Footer.css";
 import {
   FaFacebookF,
   FaInstagram,

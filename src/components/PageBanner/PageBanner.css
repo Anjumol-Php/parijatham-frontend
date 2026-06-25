@@ -1,0 +1,16 @@
+.page-banner{
+    background:#FFF8F3;
+    padding:70px 0;
+    text-align:center;
+}
+
+.page-banner h1{
+    font-size:55px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.page-banner p{
+    color:#777;
+    font-size:18px;
+}

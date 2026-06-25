@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Categories from "./pages/Categories";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
+import Shop from "./pages/Shop";
 
 export default function App() {
   return (
@@ -34,7 +35,9 @@ export default function App() {
         path="/product/:id"
         element={<ProductDetails />}
       />
+      <Route path="/shop" element={<Shop />} />
       </Routes>
+      
       
     </BrowserRouter>
   );
