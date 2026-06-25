@@ -1,46 +1,63 @@
+import "./Collections.css";
+
+import bridal from "../../assets/images/collections/bridal.jpg";
+import everyday from "../../assets/images/collections/everyday.jpg";
+import handmade from "../../assets/images/collections/handmade.jpg";
+import crochet from "../../assets/images/collections/crochet.jpg";
+
+const collections = [
+  {
+    title: "Bridal Collection",
+    image: bridal,
+  },
+  {
+    title: "Everyday Elegance",
+    image: everyday,
+  },
+  {
+    title: "Handmade Gifts",
+    image: handmade,
+  },
+  {
+    title: "Crochet Collection",
+    image: crochet,
+  },
+];
+
 function Collections() {
-  const collections = [
-    {
-      title: "Necklaces",
-      image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=500",
-    },
-    {
-      title: "Earrings",
-      image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500",
-    },
-    {
-      title: "Bangles",
-      image: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?w=500",
-    },
-  ];
-
   return (
-    <section className="container py-5">
-      <h2 className="text-center fw-bold mb-5">
-        Our Collections
-      </h2>
+    <section className="collections">
+      <div className="container">
 
-      <div className="row">
-        {collections.map((item, index) => (
-          <div className="col-md-4 mb-4" key={index}>
-            <div className="card shadow border-0">
-              <img
-                src={item.image}
-                className="card-img-top"
-                alt={item.title}
-                style={{ height: "350px", objectFit: "cover" }}
-              />
+        <div className="section-header">
+          <h2>Explore Our Collections</h2>
+          <p>
+            Discover timeless jewellery and handcrafted creations made with love.
+          </p>
+        </div>
 
-              <div className="card-body text-center">
-                <h4>{item.title}</h4>
+        <div className="row">
 
-                <button className="btn btn-danger mt-2">
-                  View Collection
-                </button>
+          {collections.map((item, index) => (
+            <div className="col-lg-3 col-md-6 mb-4" key={index}>
+
+              <div className="collection-card">
+
+                <img src={item.image} alt={item.title} />
+
+                <div className="collection-content">
+                  <h4>{item.title}</h4>
+
+                  <button>Explore</button>
+                </div>
+
               </div>
+
             </div>
-          </div>
-        ))}
+          ))}
+
+        </div>
+
       </div>
     </section>
   );

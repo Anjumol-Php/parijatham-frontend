@@ -11,12 +11,17 @@ function Home() {
     <>
       <Navbar />
 
-      <Hero />
-      <Categories />
-      <FeaturedProducts />
-      <WhyChoose />
-      <Collections />
-      <Footer />
+<Hero />
+
+<Collections />
+
+<WhyChoose />
+
+<FeaturedProducts />
+
+<Categories />
+
+<Footer />
     </>
   );
 }
