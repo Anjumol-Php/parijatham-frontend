@@ -1,0 +1,16 @@
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.shop-btn {
+  background: #C8A45D;
+  color: white;
+}
+.hero-content{
+    padding-top:180px;
+}

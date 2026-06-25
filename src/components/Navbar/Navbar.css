@@ -1,0 +1,151 @@
+.navbar-custom{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(12px);
+
+    transition:.4s;
+
+    box-shadow:0 4px 25px rgba(0,0,0,.05);
+
+}
+
+.navbar-wrapper{
+
+    height:90px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo h2{
+
+    font-size:32px;
+
+    color:#B8860B;
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    color:#777;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.menu{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:40px;
+
+    margin:0;
+
+}
+
+.menu a{
+
+    color:#222;
+
+    font-weight:500;
+
+    text-decoration:none;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    background:#B8860B;
+
+    left:0;
+
+    bottom:-8px;
+
+    transition:.3s;
+
+}
+
+.menu a:hover{
+
+    color:#B8860B;
+
+}
+
+.menu a:hover::after{
+
+    width:100%;
+
+}
+
+.nav-icons{
+
+    display:flex;
+
+    gap:22px;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+
+.nav-icons svg{
+
+    transition:.3s;
+
+}
+
+.nav-icons svg:hover{
+
+    color:#B8860B;
+
+    transform:scale(1.15);
+
+}
+
+@media(max-width:992px){
+
+.menu{
+
+display:none;
+
+}
+
+}
