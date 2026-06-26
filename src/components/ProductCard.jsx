@@ -1,8 +1,11 @@
 import "./ProductCard.css";
 import { FaHeart, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   return (
+    
+  <Link to={`/product/${product.id}`} className="text-decoration-none">
     <div className="product-card">
 
       <div className="product-image">
@@ -34,8 +37,9 @@ function ProductCard({ product }) {
         </button>
 
       </div>
-
     </div>
+  
+  </Link>
   );
 }
 

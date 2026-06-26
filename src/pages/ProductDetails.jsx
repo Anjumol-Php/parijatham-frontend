@@ -1,85 +1,140 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
+import products from "../data/products";
+
 
 function ProductDetails() {
-
   const { id } = useParams();
-
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    loadProduct();
-  }, []);
-
-  const loadProduct = async () => {
-
-    const res = await axios.get(
-      `http://localhost:5000/api/products/${id}`
+  const product = products.find(
+    (item) => item.id === Number(id)
+  );
+  const [quantity, setQuantity] = useState(1);
+  if (!product) {
+    return (
+      <>
+        <Navbar />
+        <div className="container text-center py-5">
+          <h2>Product Not Found</h2>
+          <Link to="/shop" className="btn btn-dark mt-3">
+            Back to Shop
+          </Link>
+        </div>
+        <Footer />
+      </>
     );
-
-    setProduct(res.data);
-  };
-
-  if (!product)
-    return <h3 className="text-center mt-5">Loading...</h3>;
+  }
 
   return (
-    <div className="container py-5">
+    <>
+      <Navbar />
 
-      <div className="row">
+      <div className="container py-5">
 
-        <div className="col-md-6">
+        <Link
+          to="/shop"
+          className="btn btn-outline-secondary mb-4"
+        >
+          ← Back to Shop
+        </Link>
 
-          <img
-            src={`http://localhost:5000/uploads/products/${product.thumbnail}`}
-            className="img-fluid rounded shadow"
-            alt=""
-          />
+        <div className="row align-items-center">
 
-        </div>
+          <div className="col-md-6 text-center">
 
-        <div className="col-md-6">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="img-fluid rounded shadow"
+              style={{
+                maxHeight: "550px",
+                objectFit: "cover"
+              }}
+            />
 
-          <h2>{product.name}</h2>
+          </div>
 
-          <p className="text-muted">
-            {product.category_name}
-          </p>
+          <div className="col-md-6">
 
-          <h3 className="text-success">
-            ₹{product.sale_price}
-          </h3>
+            <span className="badge bg-warning text-dark mb-3">
+              {product.badge}
+            </span>
 
-          <h5 className="text-decoration-line-through text-muted">
-            ₹{product.price}
-          </h5>
+            <h1 className="mb-3">
+              {product.name}
+            </h1>
 
-          <p>
-            Stock: {product.stock}
-          </p>
+            <p className="text-muted fs-5">
+              Category : {product.category}
+            </p>
 
-          <hr />
+            <h2 className="text-danger mb-3">
+              ₹{product.price}
+            </h2>
 
-          <h5>Description</h5>
+            <hr />
 
-          <p>
-            {product.description}
-          </p>
+            <h4>Description</h4>
 
-          <button className="btn btn-warning me-2">
-            Add To Cart
-          </button>
+            <p className="text-muted">
+              Beautiful handcrafted jewellery made with love and care.
+              Perfect for weddings, festivals and special occasions.
+            </p>
 
-          <button className="btn btn-success">
-            Buy Now
-          </button>
+            <p>
+              <strong>Availability :</strong>{" "}
+              <span className="text-success">
+                In Stock
+              </span>
+            </p>
+
+            <div className="d-flex align-items-center gap-3 mt-4">
+
+              <div className="d-flex align-items-center border rounded">
+
+                <button
+                  className="btn btn-light"
+                  onClick={() =>
+                    quantity > 1 && setQuantity(quantity - 1)
+                  }
+                >
+                  -
+                </button>
+
+                <span className="px-3 fw-bold">
+                  {quantity}
+                </span>
+
+                <button
+                  className="btn btn-light"
+                  onClick={() =>
+                    setQuantity(quantity + 1)
+                  }
+                >
+                  +
+                </button>
+
+              </div>
+
+              <button className="btn btn-danger px-4">
+                Add To Cart
+              </button>
+
+              <button className="btn btn-dark px-4">
+                Buy Now
+              </button>
+
+            </div>
+
+          </div>
 
         </div>
 
       </div>
 
-    </div>
+      <Footer />
+    </>
   );
 }
 
