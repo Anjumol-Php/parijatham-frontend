@@ -7,7 +7,7 @@ const products = [
   {
     id: 1,
     name: "Temple Necklace",
-    category: "Necklace",
+    category: "Necklaces",
     price: 1499,
     image: product1,
     badge: "Best Seller",
@@ -34,7 +34,7 @@ const products = [
   {
     id: 4,
     name: "Elegant Ring",
-    category: "Ring",
+    category: "Rings",
     price: 599,
     image: product4,
     badge: "Premium",

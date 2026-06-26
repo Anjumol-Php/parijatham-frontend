@@ -1,12 +1,19 @@
 import products from "../../data/products";
 import ProductCard from "../ProductCard";
 
-function ProductGrid({ search }) {
+function ProductGrid({  search, category }) {
 
   // Search filter
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredProducts = products.filter((product) => {
+  const matchesSearch = product.name
+    .toLowerCase()
+    .includes(search.toLowerCase());
+
+  const matchesCategory =
+    category === "All" || product.category === category;
+
+  return matchesSearch && matchesCategory;
+});
 
   return (
     <>

@@ -9,6 +9,7 @@ import ProductGrid from "../components/Shop/ProductGrid";
 
 function Shop() {
     const [search, setSearch] = useState("");
+    const [category, setCategory] = useState("All");
   return (
     <>
       <Navbar />
@@ -21,13 +22,13 @@ function Shop() {
 
           <div className="col-lg-3">
 
-           <FilterSidebar search={search} setSearch={setSearch}/>
+           <FilterSidebar search={search} setSearch={setSearch} category={category} setCategory={setCategory}/>
 
           </div>
 
           <div className="col-lg-9">
 
-            <ProductGrid search={search}/>
+            <ProductGrid search={search} category={category}/>
 
           </div>
 
