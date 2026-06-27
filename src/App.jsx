@@ -7,6 +7,7 @@ import Categories from "./pages/Categories";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import Shop from "./pages/Shop";
+import Cart from "./pages/Cart";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
         element={<ProductDetails />}
       />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/cart" element={<Cart />} />
       </Routes>
       
       

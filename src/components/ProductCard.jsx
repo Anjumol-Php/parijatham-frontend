@@ -1,24 +1,32 @@
 import "./ProductCard.css";
-import { FaHeart, FaStar } from "react-icons/fa";
+import { FaHeart, FaRegHeart, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function ProductCard({ product }) {
+  const [liked, setLiked] = useState(false);
   return (
     
   <Link to={`/product/${product.id}`} className="text-decoration-none">
     <div className="product-card">
 
-      <div className="product-image">
+     <div className="product-image">
 
-        <img src={product.image} alt={product.name} />
+  <img src={product.image} alt={product.name} />
 
-        <button className="wishlist-btn">
-          <FaHeart />
-        </button>
+  <button
+    className="wishlist-btn"
+    onClick={(e) => {
+      e.preventDefault();
+      setLiked(!liked);
+    }}
+  >
+    {liked ? "❤️" : "🤍"}
+  </button>
 
-        <span className="badge">{product.badge}</span>
+  <span className="badge">{product.badge}</span>
 
-      </div>
+</div>
 
       <div className="product-info">
 
@@ -29,6 +37,9 @@ function ProductCard({ product }) {
             <FaStar key={index} />
           ))}
         </div>
+        <h5>
+  <FaHeart />
+</h5>
 
         <h4>₹{product.price}</h4>
 

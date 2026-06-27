@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import products from "../data/products";
+import { CartContext } from "../context/CartContext";
 
 
 function ProductDetails() {
@@ -10,6 +11,7 @@ function ProductDetails() {
   const product = products.find(
     (item) => item.id === Number(id)
   );
+  const { addToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
   if (!product) {
     return (
@@ -117,9 +119,12 @@ function ProductDetails() {
 
               </div>
 
-              <button className="btn btn-danger px-4">
-                Add To Cart
-              </button>
+              <button
+  className="btn btn-danger px-4"
+  onClick={() => addToCart(product)}
+>
+  Add To Cart
+</button>
 
               <button className="btn btn-dark px-4">
                 Buy Now
